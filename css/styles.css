@@ -1,0 +1,150 @@
+:root {
+
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: none;
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+body, html {
+	height: 100%;
+	width: 100%;
+	background: grey;
+	position: relative;
+}
+
+
+/* Main Styles */
+.container {
+    width: 650px;
+	height: 650px;
+	margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+	left: 0;
+	position: absolute;
+	background: url(../images/desk.jpg) no-repeat center;
+	background-size: cover;
+
+	
+}
+
+.container__desk{
+	margin: 5%;
+	height: 90%;
+	position: relative;
+	background: black;
+	counter-reset: numbers;
+}
+
+.container__desk{
+	content: '';
+}
+
+.row {
+	height: 12.5%;
+	width: 100%;
+	position: relative;
+	left: 2.6%;
+	counter-reset: alphabet;
+	
+}
+
+.row::before{
+	counter-increment: numbers;
+	content: counter(number);
+	position: absolute;
+	color: #fff;
+	top: 40%;
+	left:-2%
+}
+
+.cell {
+	width: 12.5%;
+	height: 100%;
+	position: absolute;
+}
+
+.cell:nth-child(1) {
+	left: 0;
+}
+
+.cell:nth-child(2) {
+	left: 12.5%;
+}
+
+.cell:nth-child(3) {
+	left: 25%;
+}
+
+.cell:nth-child(4) {
+	left: 37.5%;
+}
+
+.cell:nth-child(5) {
+	left: 50%;
+}
+
+.cell:nth-child(6) {
+	left: 62.5%;
+}
+
+.cell:nth-child(7) {
+	left: 75%;
+}
+
+.cell:nth-child(8) {
+	left: 87.5%;
+}
+
+.row:nth-child(even) .cell:nth-child(even),
+.row:nth-child(odd) .cell:nth-child(odd) {
+	background: rgba(255, 255, 255, .9);
+}
+
+.row:last-child .cell::after {
+	counter-increment: alphabet;
+	content: counter(alphabet, upper-alpha);
+	color: #fff;
+	position: absolute;
+	bottom: -25%;
+	left: 40%;
+}
+
+.black::before{
+	content: '';
+	background-image: url(../images/black.jpg);
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+	transition: all .3s ease-in-out;
+}
+
+.white::before{
+	content: '';
+	background-image: url(../images/white.jpg);
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+	transition: all .3s ease-in-out;
+}
